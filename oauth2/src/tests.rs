@@ -1,13 +1,15 @@
 use crate::basic::{
     BasicClient, BasicErrorResponseType, BasicRevocationErrorResponse, BasicTokenType,
 };
+#[cfg(any(feature = "reqwest", feature = "reqwest-blocking"))]
+use crate::HttpClientError;
 use crate::{
     AccessToken, AuthType, AuthUrl, AuthorizationCode, AuthorizationRequest, Client,
     ClientCredentialsTokenRequest, ClientId, ClientSecret, CodeTokenRequest, CsrfToken,
     DeviceAccessTokenRequest, DeviceAuthorizationRequest, DeviceAuthorizationUrl, DeviceCode,
     DeviceCodeErrorResponse, DeviceCodeErrorResponseType, EmptyExtraDeviceAuthorizationFields,
-    EmptyExtraTokenFields, EndUserVerificationUrl, EndpointNotSet, EndpointSet, HttpClientError,
-    HttpRequest, HttpResponse, PasswordTokenRequest, PkceCodeChallenge, PkceCodeChallengeMethod,
+    EmptyExtraTokenFields, EndUserVerificationUrl, EndpointNotSet, EndpointSet, HttpRequest,
+    HttpResponse, PasswordTokenRequest, PkceCodeChallenge, PkceCodeChallengeMethod,
     PkceCodeVerifier, RedirectUrl, RefreshToken, RefreshTokenRequest, RequestTokenError,
     ResourceOwnerPassword, ResourceOwnerUsername, ResponseType, Scope,
     StandardDeviceAuthorizationResponse, StandardErrorResponse, StandardRevocableToken,

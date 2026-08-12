@@ -1,19 +1,15 @@
 [package]
 name = "oauth2-reqwest"
-authors = ["David A. Ramos <ramos@cs.stanford.edu>"]
 version = "0.1.0-alpha.3"
-license = "MIT"
-description = "reqwest HTTP client for oauth2"
-repository = "https://github.com/ramosbugs/oauth2-rs"
 edition = "2021"
+rust-version = "1.92"
+description = "reqwest HTTP client for oauth2"
 readme = "../README.md"
-rust-version = "1.71"
+repository = "https://github.com/ramosbugs/oauth2-rs"
+license = "MIT"
 
 [package.metadata.docs.rs]
 all-features = true
-
-[features]
-blocking = ["reqwest/blocking"]
 
 [dependencies]
 oauth2 = { path = "../oauth2", version = "5", default-features = false }
@@ -21,3 +17,6 @@ reqwest = { version = "0.13", default-features = false }
 
 [dev-dependencies]
 anyhow = "1.0"
+
+[features]
+blocking = ["reqwest/blocking"]
